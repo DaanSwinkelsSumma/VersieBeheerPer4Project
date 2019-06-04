@@ -17,4 +17,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//basic page navigation routes
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/Omgeving', ['middleware' => 'auth', 'uses' => 'PageController@Omgeving']);
+Route::get('/Verhuur', ['middleware' => 'auth', 'uses' => 'PageController@Verhuur']);
+Route::get('/Contact', ['middleware' => 'auth', 'uses' => 'PageController@Contact']);
+

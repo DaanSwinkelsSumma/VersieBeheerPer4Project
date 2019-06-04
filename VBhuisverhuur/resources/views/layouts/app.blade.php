@@ -18,13 +18,16 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+
 </head>
 <body>
-    <div id="app">
+    <div id="google_translate_element"></div>
+    <div id="app" >
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    Huisjes verhuur Zwitserland
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -33,7 +36,15 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Omgeving">Omgeving</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Verhuur">Verhuur</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Contact">Contact</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -75,6 +86,13 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    </div>        
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL}, 'google_translate_element');
+        }
+    </script>
+        
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
